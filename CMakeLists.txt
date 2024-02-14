@@ -1,9 +1,16 @@
 cmake_minimum_required(VERSION 3.14)
 
+
 project(everest-evse_security VERSION 0.4.2
         DESCRIPTION "Implementation of EVSE related security operations"
 		LANGUAGES CXX C
 )
+
+if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME} AND BUILD_TESTING)
+    set(CMAKE_CON ON)
+endif()
+message("THIS IS THE VALUE ${CMAKE_CON}")
+
 
 find_package(everest-cmake 0.1 REQUIRED
     PATHS ../everest-cmake
